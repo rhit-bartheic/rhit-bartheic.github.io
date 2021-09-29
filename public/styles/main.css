@@ -1,0 +1,104 @@
+:root {
+  --vertical-space: 2rem;
+  --horizontal-space: 3rem;
+}
+
+body {
+  background: #dddddd;
+  display: grid;
+  grid-template-areas:
+    "head head"
+    "nav nav"
+    "main main"
+    "foot foot";
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: auto auto 1fr auto;
+}
+
+.navbar {
+  background-color: #800000;
+  color: white;
+}
+
+.page-container {
+  margin-top: 75px;
+}
+
+.tab {
+  margin-left: 40px;
+}
+
+.about {
+  max-width: 50em;
+}
+
+#aboutimg {
+  height: 20em;
+}
+
+body#portfolio img {
+  height: 25em;
+}
+
+body > header {
+  grid-area: head;
+}
+
+body > nav {
+  grid-area: nav;
+}
+
+body > main {
+  grid-area: main;
+}
+
+body > footer {
+  grid-area: foot;
+}
+
+body > nav ul {
+  list-style-type: none;
+  padding: 15px;
+}
+
+body > nav ul li {
+  display: inline;
+  margin: 25px;
+}
+
+body > * {
+  padding-left: var(--horizontal-space);
+  padding-right: var(--horizontal-space);
+}
+header,
+footer {
+  padding-top: var(--vertical-space);
+  padding-bottom: var(--vertical-space);
+}
+
+header h1,
+footer h1 {
+  margin: 0;
+}
+
+@media screen and (min-width: 600px) {
+  body {
+    grid-template-areas:
+      "head nav"
+      "main main"
+      "foot foot";
+  }
+}
+
+body#portfolio ul#portfolioList {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  list-style-type: none;
+  padding: 0;
+}
+
+body#portfolio ul#portfolioList li {
+  flex-basis: 48%;
+  padding-right: 2%;
+}
